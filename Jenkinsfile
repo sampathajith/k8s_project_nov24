@@ -12,14 +12,14 @@ pipeline {
      stage('Build the Docker image') {
             steps {
                 sh 'sudo docker build -t sampathk8simage /var/lib/jenkins/workspace/k8s_build_nov24'
-                sh 'sudo docker tag sampathk8simage sampath/sampathk8simage:latest'
-                sh 'sudo docker tag sampathk8simage sampath/sampathk8simage:${BUILD_NUMBER}'
+                sh 'sudo docker tag sampathk8simage pardockerhub/sampathk8simage:latest'
+                sh 'sudo docker tag sampathk8simage pardockerhub/sampathk8simage:${BUILD_NUMBER}'
             }
         }
         stage('Push the Docker image') {
             steps {
-                sh 'sudo docker image push sampath/sampathk8simage:latest'
-                sh 'sudo docker image push sampath/sampathk8simage:${BUILD_NUMBER}'
+                sh 'sudo docker image push pardockerhub/sampathk8simage:latest'
+                sh 'sudo docker image push pardockerhub/sampathk8simage:${BUILD_NUMBER}'
             }
         }
         stage('Deploy on Kubernetes') {
@@ -29,4 +29,4 @@ pipeline {
             }
         }
 }
-} 
+}   
