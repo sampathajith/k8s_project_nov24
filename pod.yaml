@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: hello
-          image: sampath/sampathk8simage:latest
+          image: pardockerhub/sampathk8simage:latest
           imagePullPolicy: Always
 
 
