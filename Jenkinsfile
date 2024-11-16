@@ -11,7 +11,7 @@ pipeline {
 
      stage('Build the Docker image') {
             steps {
-                sh 'sudo docker build -t alvink8simage /var/lib/jenkins/workspace/k8s_build_nov24'
+                sh 'sudo docker build -t sampathk8simage /var/lib/jenkins/workspace/k8s_build_nov24'
                 sh 'sudo docker tag sampathk8simage sampath/sampathk8simage:latest'
                 sh 'sudo docker tag sampathk8simage sampath/sampathk8simage:${BUILD_NUMBER}'
             }
